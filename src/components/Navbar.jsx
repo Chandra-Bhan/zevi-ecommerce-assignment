@@ -1,14 +1,15 @@
 import React from "react";
 import { FaSignInAlt, FaUserPlus, FaShoppingBasket } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg  navbar-light bg-white py-3 shadow-sm">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <NavLink className="navbar-brand" href="#">
             Collection
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,24 +24,24 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" to="/products">
                   Products
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" href="#">
                   About
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" href="#">
                   Contact
-                </a>
+                </NavLink>
               </li>
             </ul>
             <div className="buttons">
@@ -56,12 +57,12 @@ function Navbar() {
                 </i>{" "}
                 Register
               </a>
-              <a href="" className="btn btn-outline-dark me-3">
+              <NavLink to="" className="btn btn-outline-dark me-3">
                 <i>
                   <FaShoppingBasket />
                 </i>{" "}
                 Cart (0)
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>

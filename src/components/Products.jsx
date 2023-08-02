@@ -10,8 +10,9 @@ function Products() {
     try {
       setLoading(true);
       const response = await fetch("https://fakestoreapi.com/products");
-      setFilter(await response.json());
-      setData(filter);
+      const produc = await response.json();
+      setFilter(produc);
+      setData(produc);
       setLoading(false);
     } catch (error) {
       alert(error.message, "try again");
