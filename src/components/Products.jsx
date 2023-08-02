@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -10,10 +11,30 @@ function Products() {
     const response = await fetch("https://fakestoreapi.com/products");
     setData(await response.json());
   };
-  console.log(data);
+
   useEffect(() => {
     getProducts();
   }, []);
+
+  const Loading = () => {
+    return (
+      <>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+      </>
+    );
+  };
+
   return <div>Products</div>;
 }
 
