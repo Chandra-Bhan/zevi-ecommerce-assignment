@@ -1,4 +1,5 @@
 import "./App.css";
+import Cart from "./components/Cart";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Product from "./components/Product";
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<Product />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </div>

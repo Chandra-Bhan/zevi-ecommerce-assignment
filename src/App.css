@@ -1,0 +1,9 @@
+
+.buy-now-btn{
+display: none;
+visibility: hidden;
+}
+.cart-container-div:hover .buy-now-btn{
+display: block;
+visibility: visible;
+}

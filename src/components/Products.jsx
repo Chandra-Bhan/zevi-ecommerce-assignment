@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
+import StarRatings from "react-star-ratings";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -86,7 +87,10 @@ function Products() {
         {filter.map((product) => {
           return (
             <>
-              <div className="col-md-3 mb-4" key={product.id}>
+              <div
+                className="col-md-3 mb-4 cart-container-div"
+                key={product.id}
+              >
                 <div className="card h-100 text-center p-4">
                   <img
                     src={product.image}
@@ -99,9 +103,26 @@ function Products() {
                       {product.title.substring(0, 12)}
                     </h5>
                     <p>${product.price}</p>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-evenly",
+                      }}
+                    >
+                      <StarRatings
+                        rating={product.rating.rate}
+                        starDimension="20px"
+                        starSpacing="5px"
+                        starRatedColor="#ffcc33"
+                      />{" "}
+                      <span>({product.rating.count})</span>
+                    </div>
+                    <br />
+                    <br />
                     <NavLink
                       to={`/products/${product.id}`}
-                      className="btn btn-outline-dark"
+                      className="btn btn-outline-dark buy-now-btn"
                     >
                       Buy Now
                     </NavLink>
