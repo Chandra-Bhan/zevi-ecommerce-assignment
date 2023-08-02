@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
+import { NavLink } from "react-router-dom";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -85,8 +86,8 @@ function Products() {
         {filter.map((product) => {
           return (
             <>
-              <div className="col-md-3 mb-4">
-                <div className="card h-100 text-center p-4" key={product.id}>
+              <div className="col-md-3 mb-4" key={product.id}>
+                <div className="card h-100 text-center p-4">
                   <img
                     src={product.image}
                     className="card-img-top"
@@ -98,9 +99,12 @@ function Products() {
                       {product.title.substring(0, 12)}
                     </h5>
                     <p>${product.price}</p>
-                    <a href="#" className="btn btn-outline-dark">
+                    <NavLink
+                      to={`/products/${product.id}`}
+                      className="btn btn-outline-dark"
+                    >
                       Buy Now
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </div>
