@@ -8,7 +8,7 @@ function Home() {
           src="https://img.freepik.com/premium-photo/young-woman-selling-clothes-accessories-online-by-smartphone-live-streaming-business-online-e-commerce-home_35076-4844.jpg"
           className="card-img"
           alt="background"
-          height={630}
+          // height={630}
         />
         <div className="card-img-overlay d-flex flex-column justify-content-center text-center">
           <div className="container">
